@@ -22,6 +22,7 @@ def filereader(performance_path: str, kpa_path: str) -> dict:
 INSTRUCTIONS =  f"You're an expert at reading excel files with a knack for paying attention to tiny details,\
      you use the {filereader} to read the excel files provided, " 
 
+
 reader_agent = Agent(
     name="Reader agent",
     instructions=INSTRUCTIONS,
@@ -30,3 +31,4 @@ reader_agent = Agent(
    
 )
 
+tool1 = reader_agent.as_tool(tool_name="sales_agent1", tool_description= "reads excel file" )
